@@ -1,18 +1,18 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, NavLink, Link } from 'react-router-dom'
 
 export default function App() {
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100">
       <header className="border-b border-neutral-800">
         <nav className="container-page flex h-16 items-center justify-between">
-          <a href="/" className="text-lg font-semibold">SignalEdge</a>
+          <Link to="/" className="text-lg font-semibold">SignalEdge</Link>
           <div className="flex items-center gap-6 text-sm">
-            <a href="/" className="hover:text-brand">Home</a>
-            <a href="/research" className="hover:text-brand">Research</a>
-            <a href="/signals" className="hover:text-brand">Signals</a>
-            <a href="/education" className="hover:text-brand">Education</a>
-            <a href="/pricing" className="hover:text-brand">Pricing</a>
-            <a href="/account" className="px-3 py-1.5 rounded-md bg-brand text-black font-medium hover:bg-brand-dark">Account</a>
+            <NavLink to="/" className={({isActive})=>`hover:text-brand ${isActive ? 'text-brand' : ''}`}>Home</NavLink>
+            <NavLink to="/research" className={({isActive})=>`hover:text-brand ${isActive ? 'text-brand' : ''}`}>Research</NavLink>
+            <NavLink to="/signals" className={({isActive})=>`hover:text-brand ${isActive ? 'text-brand' : ''}`}>Signals</NavLink>
+            <NavLink to="/education" className={({isActive})=>`hover:text-brand ${isActive ? 'text-brand' : ''}`}>Education</NavLink>
+            <NavLink to="/pricing" className={({isActive})=>`hover:text-brand ${isActive ? 'text-brand' : ''}`}>Pricing</NavLink>
+            <NavLink to="/account" className={({isActive})=>`px-3 py-1.5 rounded-md bg-brand text-black font-medium hover:bg-brand-dark ${isActive ? 'ring-1 ring-brand/40' : ''}`}>Account</NavLink>
           </div>
         </nav>
       </header>

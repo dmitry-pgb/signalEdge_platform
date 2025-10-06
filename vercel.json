@@ -1,0 +1,7 @@
+{
+  "routes": [
+    { "src": "/favicon.ico", "dest": "/vite.svg" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
+
