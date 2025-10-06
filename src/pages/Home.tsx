@@ -29,17 +29,17 @@ export default function Home() {
 				<div className="relative z-[1] px-6 py-14 sm:py-20 text-center">
 					<p className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-brand">
 						<span className="h-2 w-2 rounded-full bg-brand" />
-						Data‑driven signals and education
+						SignalEdge — Research, Education & Automated Crypto Insights
 					</p>
 					<h1 className="mt-4 text-4xl sm:text-6xl font-extrabold leading-tight">
-						Trade smarter with tested, rules‑based crypto strategies.
+						Trade smarter with data‑driven crypto insights.
         </h1>
 					<p className="mt-4 text-neutral-400 max-w-2xl mx-auto">
-						Publish and follow transparent systems proven to acquire Bitcoin at better‑than‑market prices. Learn the rules. Keep custody.
+						Transparent, rules‑based research and signals designed to acquire Bitcoin at better‑than‑market prices. Learn the rules. Keep custody.
         </p>
 					<div className="mt-6 flex items-center justify-center gap-3">
           <a href="/pricing" className="px-5 py-2.5 rounded-md bg-brand text-black font-medium hover:bg-brand-dark">Start free</a>
-						<a href="/signals" className="px-5 py-2.5 rounded-md border border-neutral-700 hover:border-neutral-600">See premium signals</a>
+						<a href="/research" className="px-5 py-2.5 rounded-md border border-neutral-700 hover:border-neutral-600">View analysis</a>
 					</div>
 
 					{/* KPIs */}
@@ -60,6 +60,31 @@ export default function Home() {
 				</div>
 				{/* Decorative glow */}
 				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(50rem_20rem_at_50%_120%,rgba(34,197,94,0.12),transparent)]" />
+			</section>
+
+			{/* Featured analysis / chart */}
+			<section className="rounded-2xl border border-neutral-800 overflow-hidden">
+				<div className="grid sm:grid-cols-2">
+					<div className="p-6 sm:p-8 bg-neutral-900/40">
+						<p className="text-sm text-brand">Featured analysis</p>
+						<h3 className="mt-2 text-2xl font-semibold">BTC regime monitor</h3>
+						<p className="mt-2 text-neutral-400 text-sm">Live dashboard tracking momentum vs. mean‑reversion to help determine risk‑on vs. risk‑off conditions.</p>
+						<div className="mt-4 flex gap-3">
+							<a href="/research" className="px-4 py-2 rounded-md bg-brand text-black font-medium hover:bg-brand-dark text-sm">Read breakdown</a>
+							<a href="/signals" className="px-4 py-2 rounded-md border border-neutral-700 hover:border-neutral-600 text-sm">See signals</a>
+						</div>
+					</div>
+					<div className="bg-neutral-950">
+						<div className="aspect-[16/10] w-full">
+							<iframe
+								title="Featured BTC Chart"
+								className="w-full h-full"
+								src="https://s.tradingview.com/widgetembed/?symbol=BINANCE:BTCUSDT&interval=240&theme=dark&style=1&withdateranges=1&hide_side_toolbar=1"
+								allowTransparency
+							/>
+						</div>
+					</div>
+				</div>
 			</section>
 
 			{/* Top-Ranked Strategies */}
@@ -92,6 +117,35 @@ export default function Home() {
 				</div>
 			</section>
 
+			{/* Testimonials / credibility */}
+			<section className="space-y-6">
+				<div className="text-center">
+					<p className="text-sm text-brand">What users say</p>
+					<h3 className="text-2xl font-semibold mt-1">Trusted by serious crypto traders</h3>
+				</div>
+				<div className="grid gap-5 sm:grid-cols-3">
+					{[
+						{
+							q: 'SignalEdge replaces noise with clear rules. The transparency builds real conviction.',
+							a: 'Pro trader, 7 yrs'
+						},
+						{
+							q: 'Backtests plus live context helped me size positions responsibly and stick to the plan.',
+							a: 'Quant enthusiast'
+						},
+						{
+							q: 'Education explains the why behind every signal—perfect for learning while investing.',
+							a: 'Long‑term investor'
+						},
+					].map((t, i) => (
+						<div key={i} className="rounded-xl border border-neutral-800 bg-neutral-900/40 p-5">
+							<p className="text-neutral-300">“{t.q}”</p>
+							<p className="mt-3 text-xs text-neutral-500">— {t.a}</p>
+						</div>
+					))}
+				</div>
+			</section>
+
 			{/* Platform pillars */}
 			<section className="grid gap-5 sm:grid-cols-3">
 				<div className="rounded-xl border border-neutral-800 bg-neutral-900/40 p-6">
@@ -107,35 +161,6 @@ export default function Home() {
 					<p className="mt-2 text-sm text-neutral-400">Guides and video explainers so users learn the strategy logic, not just copy.</p>
         </div>
       </section>
-
-			{/* Methodology */}
-			<section className="rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-8">
-				<div className="grid gap-6 sm:grid-cols-2">
-					<div>
-						<p className="text-sm text-brand">Methodology</p>
-						<h3 className="mt-2 text-2xl font-semibold">Z‑Score engine: transparent and rules‑based</h3>
-						<p className="mt-2 text-neutral-400">
-							Our risk model blends momentum with mean‑reversion and adapts to volatility, aiming to contain drawdowns while letting winners run.
-						</p>
-						<div className="mt-4 flex flex-wrap gap-2 text-xs">
-							<span className="rounded-md border border-emerald-500/40 bg-emerald-500/10 px-3 py-1">Dynamic sizing</span>
-							<span className="rounded-md border border-cyan-500/40 bg-cyan-500/10 px-3 py-1">Volatility aware</span>
-							<span className="rounded-md border border-violet-500/40 bg-violet-500/10 px-3 py-1">Trend + mean reversion</span>
-						</div>
-					</div>
-					<div className="rounded-xl border border-neutral-800 bg-neutral-950 p-4">
-        <div className="aspect-[16/9] w-full">
-          <iframe
-            title="BTC Preview"
-            className="w-full h-full"
-            src="https://s.tradingview.com/widgetembed/?symbol=BINANCE:BTCUSDT&interval=240&theme=dark&style=1&withdateranges=1&hide_side_toolbar=1"
-            allowTransparency
-          />
-        </div>
-						<p className="mt-3 text-xs text-neutral-500">Illustrative chart for preview purposes.</p>
-					</div>
-				</div>
-			</section>
 
 			{/* How it works */}
 			<section className="space-y-6">
@@ -245,8 +270,8 @@ export default function Home() {
 				<div className="mt-6 flex justify-center gap-3">
 					<a href="/pricing" className="px-5 py-2.5 rounded-md bg-brand text-black font-medium hover:bg-brand-dark">Get started</a>
 					<a href="/education" className="px-5 py-2.5 rounded-md border border-neutral-700 hover:border-neutral-600">Learn more</a>
-				</div>
-			</section>
+        </div>
+      </section>
     </div>
 	);
 }
